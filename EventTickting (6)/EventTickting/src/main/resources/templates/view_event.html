@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Event</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container th:replace="fragments/navigation :: navbar"">
+    <h1 class="mt-5">Event Details</h1>
+    <div class="card">
+        <div class="card-header">
+            <h2 th:text="${event.name}"></h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Name:</strong> <span th:text="${event.name}"></span></p>
+            <p><strong>Describtion:</strong> <span th:text="${event.description}"></span></p>
+            <p><strong>Date:</strong> <span th:text="${event.date}"></span></p>
+            <p><strong>Date:</strong> <span th:text="${#temporals.format(event.time, 'hh:mm a')}"></span></p>
+            <p><strong>Location:</strong> <span th:text="${event.location}"></span></p>
+            <p><strong>Price:</strong> <span th:text="'$' + ${event.price}"></span></p>
+
+
+
+        </div>
+    </div>
+    <a class="btn btn-primary mt-3" th:href="@{/events}">Back to Events</a>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

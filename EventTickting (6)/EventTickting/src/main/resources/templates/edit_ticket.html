@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Ticket</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container mt-4">
+    <h1 class="mb-4">Edit Ticket</h1>
+    <form th:action="@{/tickets/update/{id}(id=${ticket.id})}" th:object="${ticket}" method="post">
+        <div class="form-group">
+            <label for="attendeeName">Attendee Name</label>
+            <input type="text" class="form-control" id="attendeeName" th:field="*{attendeeName}" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" th:field="*{email}" required>
+        </div>
+        <div class="form-group">
+            <label for="seatNumber">Seat Number</label>
+            <input type="text" class="form-control" id="seatNumber" th:field="*{seatNumber}" required>
+        </div>
+        <div class="form-group">
+            <label for="event">Event</label>
+            <select class="form-control" id="event" th:field="*{event.id}" required>
+                <option th:each="event : ${events}" th:value="${event.id}" th:text="${event.name}"
+                        th:selected="${event.id == ticket.event.id}"></option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+    <a class="btn btn-secondary mt-3" th:href="@{/tickets}">Cancel</a>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

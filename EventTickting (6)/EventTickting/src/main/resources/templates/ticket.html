@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Create Ticket</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content bg-light py-4">
+    <h1>Create Ticket</h1>
+    <form th:action="@{/tickets}" th:object="${ticket}" method="post">
+        <div class="form-group">
+            <label for="attendeeName">Attendee Name</label>
+            <input type="text" class="form-control" id="attendeeName" th:field="*{attendeeName}" placeholder="Enter Attendee Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="Enter Email">
+        </div>
+        <div class="form-group">
+            <label for="event">Event</label>
+            <select class="form-control" id="event" th:field="*{event.id}">
+                <option th:each="event : ${events}" th:value="${event.id}" th:text="${event.name}"></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="seatNumber">Seat Number</label>
+            <input type="text" class="form-control" id="seatNumber" th:field="*{seatNumber}" placeholder="Enter Seat Number">
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

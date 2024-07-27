@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Event</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container">
+    <h1 class="mt-4">Edit Event</h1>
+    <form th:action="@{/events/update/{id}(id=${event.id})}" th:object="${event}" method="post">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea class="form-control" id="description" th:field="*{description}" required></textarea>
+            <div class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+        </div>
+        <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" class="form-control" id="date" th:field="*{date}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></div>
+        </div>
+        <div class="form-group">
+            <label for="time">Time</label>
+            <input type="time" class="form-control" id="time" th:field="*{time}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('time')}" th:errors="*{time}"></div>
+        </div>
+        <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" class="form-control" id="location" th:field="*{location}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('location')}" th:errors="*{location}"></div>
+        </div>
+        <div class="form-group">
+            <label for="price">Price</label>
+            <input type="number" class="form-control" id="price" th:field="*{price}" required>
+            <div class="text-danger" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
+        </div>
+        <button type="submit" class="btn btn-primary">Update Event</button>
+    </form>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

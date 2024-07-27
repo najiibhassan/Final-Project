@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>View Ticket</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container mt-4 content">
+    <h1 class="mb-4" >Ticket Details</h1>
+    <div class="form-group">
+        <label>Attendee Name:</label>
+        <p th:text="${ticket.attendeeName}"></p>
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <p th:text="${ticket.email}"></p>
+    </div>
+    <div class="form-group">
+        <label>Seat Number:</label>
+        <p th:text="${ticket.seatNumber}"></p>
+    </div>
+    <div class="form-group">
+        <label>Event:</label>
+        <p th:text="${ticket.event.name}"></p>
+    </div>
+    <div class="form-group">
+        <label>Event Price:</label>
+        <p th:text=" '$' + ${ticket.event.price}"></p>
+    </div>
+    <a class="btn btn-primary mt-3" th:href="@{/tickets}">Back to Tickets</a>
+</div>
+<div th:replace="fragments/footer :: footer"></div>
+</body>
+</html>

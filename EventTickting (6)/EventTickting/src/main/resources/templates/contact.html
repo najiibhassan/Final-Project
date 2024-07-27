@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #343a40; /* Dark gray background */
+            color: #fff; /* White text */
+        }
+        .jumbotron {
+            background: rgba(0, 0, 0, 0.8);
+            color: #ffc107; /* Bootstrap warning color (golden yellow) */
+        }
+        .jumbotron h1 {
+            font-size: 3rem;
+        }
+        .card {
+            background-color: #495057; /* Slightly lighter gray */
+            border: none;
+            color: #fff;
+        }
+        .form-control {
+            background-color: #6c757d; /* Medium gray for input fields */
+            border: none;
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: #ddd;
+        }
+        .btn-primary {
+            background-color: #ffc107; /* Bootstrap warning color for buttons */
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container mt-4">
+    <header class="jumbotron text-center">
+        <h1 class="display-4">Contact Us</h1>
+        <p class="lead">We'd love to hear from you! Get in touch with us.</p>
+    </header>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Get in Touch</h5>
+            <form>
+                <div class="form-group">
+                    <label for="contactName">Name</label>
+                    <input type="text" class="form-control" id="contactName" placeholder="Enter your name">
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email address</label>
+                    <input type="email" class="form-control" id="contactEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message</label>
+                    <textarea class="form-control" id="contactMessage" rows="3" placeholder="Enter your message"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer" class="footer mt-auto"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

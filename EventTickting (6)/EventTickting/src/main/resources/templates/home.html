@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            background-color: #f0f2f5; /* Light gray background for body */
+        }
+        .content {
+            flex: 1 0 auto;
+        }
+        .footer {
+            flex-shrink: 0;
+        }
+        .jumbotron {
+            background: linear-gradient(135deg, #ff6f61, #dce35b); /* Vibrant gradient background */
+            color: #ffffff;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+            padding: 4rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            background-size: cover;
+        }
+        .jumbotron h1 {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+        .jumbotron p {
+            font-size: 1.5rem;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden; /* Ensure rounded corners on images */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+        }
+        .card img {
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid #e9ecef; /* Subtle separation line */
+        }
+        .card-body {
+            background-color: #ffffff;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            padding: 1.5rem;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container content">
+    <header class="jumbotron my-4">
+        <h1 class="display-3">Welcome to Event Ticketing</h1>
+        <p class="lead">Your one-stop solution for managing and purchasing event tickets.</p>
+        <a href="/tickets" class="btn btn-primary btn-lg">Browse Tickets</a>
+    </header>
+    <div class="row">
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="/images/images7.jpg" class="card-img-top" alt="Event Image 1">
+                <div class="card-body">
+                    <h5 class="card-title">Exciting Events</h5>
+                    <p class="card-text">Discover and join the most exciting events happening around you.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="/images/images8.jpg" class="card-img-top" alt="Event Image 2">
+                <div class="card-body">
+                    <h5 class="card-title">Easy Ticketing</h5>
+                    <p class="card-text">Purchase tickets easily and securely through our platform.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="card">
+                <img src="/images/images9.jpg" class="card-img-top" alt="Event Image 3">
+                <div class="card-body">
+                    <h5 class="card-title">Manage Your Events</h5>
+                    <p class="card-text">Create and manage your own events with our user-friendly tools.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer" class="footer"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

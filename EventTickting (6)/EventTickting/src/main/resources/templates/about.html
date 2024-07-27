@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        .jumbotron {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+        }
+        .jumbotron h1 {
+            font-size: 3rem;
+        }
+        .card {
+            background-color: #333;
+            border: none;
+            color: #fff;
+        }
+        .card h5 {
+            color: #ffc107;
+        }
+        .card p {
+            color: #bbb;
+        }
+        .card-body {
+            border-top: 2px solid #ffc107;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="fragments/navigation :: navbar"></div>
+<div class="container mt-4">
+    <header class="jumbotron text-center">
+        <h1 class="display-4">About Us</h1>
+        <p class="lead">Learn more about our mission and values.</p>
+    </header>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Our Mission</h5>
+            <p class="card-text">We strive to provide the best platform for managing and purchasing event tickets. Our mission is to make event ticketing easy and accessible for everyone.</p>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Our Vision</h5>
+            <p class="card-text">To be the leading event ticketing platform recognized globally for innovation and customer satisfaction.</p>
+        </div>
+    </div>
+    <div class="card mb-4">
+        <div class="card-body">
+            <h5 class="card-title">Our Values</h5>
+            <p class="card-text">Integrity, customer focus, innovation, and teamwork are the core values that drive our company.</p>
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer" class="footer mt-auto"></div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
